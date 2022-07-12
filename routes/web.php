@@ -22,3 +22,10 @@ Route::resource('/entreprises', EntreprisesController::class);
 
 Route::get('/list-facture/{id}', [FacturesController::class ,'form_facture'])->name('form_facture');
 Route::post('/list-facture', [FacturesController::class ,'storeClient'])->name('post_factureClient');
+
+Route::get('/facture',[FacturesController::class , 'list_facture'])->name('list_facture');
+
+Route::get('/' ,function()
+{
+    return view('home');
+})->name('home');

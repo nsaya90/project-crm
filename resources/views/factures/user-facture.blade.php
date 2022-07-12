@@ -6,41 +6,16 @@
 
 @section('content')
 
-    <h2>Liste des companies</h2>
-    <ul>
-        @foreach ($list_companie as $info)
-            <li>Nom : {{ $info->name }}</li>
-            <li>Status : {{ $info->status }}</li>
-            <li>N°SIREN : {{ $info->siren }}</li>
-            <li>Email : {{ $info->email }}</li>
-            <li>Telephone : {{ $info->phone }}</li>
-            <a href="{{ route('factures.edit', [$info->id]) }}">Editer une facture</a>
-        @endforeach
-    </ul>
-
-    <h2>Liste des contacts</h2>
-    <ul>
-        @foreach ($list_contact as $info)
-            <li>Prénom : {{ $info->firstname }}</li>
-            <li>Nom : {{ $info->lastname }}</li>
-            <li>Email : {{ $info->email }}</li>
-            <li>Telephone : {{ $info->phone }}</li>
-            <a href="{{ route('factures.edit', [$info->id]) }}">Editer une facture</a>
-        @endforeach
-    </ul>
-
     <h2>Liste des factures</h2>
+    @foreach ($list as $elem)
+        <ul>
+            <li> Nom de le facture : {{ $elem->titre }}</li>
+            <li> Prix : {{ $elem->prixHT }}</li>
+            <li> TVA : {{ $elem->tva }}</li>
+            <li> PrixTTC : {{ $elem->prixttc }}</li>
+            <li> Date : {{ $elem->date }}</li>
+            <li> Bon de facture : {{ $elem->numero_facture }}</li>
+        </ul>
+    @endforeach
 
-    <ul>
-
-        @foreach ($list as $elem)
-            <li>Nom de la facture : {{ $elem->titre }}</li>
-            <li>Prix HT : {{ $elem->prixHT }}</li>
-            <li>TVA : {{ $elem->tva }}</li>
-            <li>Date de facturation : {{ $elem->date }}</li>
-            <li>Numero de facture : {{ $elem->numero_facture }}</li>
-            <li>Prix TTC : {{ $elem->prixttc }}</li>
-        @endforeach
-
-    </ul>
 @endsection

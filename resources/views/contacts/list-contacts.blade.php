@@ -8,10 +8,10 @@
 
     <ul>
         @foreach ($infos as $info)
-            <li>{{ $info->firstname }}</li>
-            <li>{{ $info->lastname }}</li>
-            <li>{{ $info->phone }}</li>
-            <li>{{ $info->email }}</li>
+            <li>Prénom : {{ $info->firstname }}</li>
+            <li>Nom : {{ $info->lastname }}</li>
+            <li>Tel : {{ $info->phone }}</li>
+            <li>Email : {{ $info->email }}</li>
 
             <a href="{{ route('contacts.show', [$info->id]) }}">Détail</a>
             <a href="{{ route('contacts.edit', [$info->id]) }}">Editer</a>

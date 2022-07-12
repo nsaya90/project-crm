@@ -60,4 +60,11 @@ class FacturesController extends Controller
         ]);
         return view('factures.success-facture');
     }
+
+    public function list_facture()
+    {
+        $list_facture = Facture::all();
+
+        return view('factures.user-facture',['list'=>$list_facture]);
+    }
 }
